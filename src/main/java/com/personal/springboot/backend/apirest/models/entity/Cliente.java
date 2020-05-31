@@ -23,8 +23,12 @@ public class Cliente implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
+	@Column(nullable= false) //No puede ser null
 	private String nombre;
+	
 	private String apellido;
+	
+	@Column(nullable= false, unique= true) //No puede ser null y debe ser único (no se puede duplicar)
 	private String email;
 	
 	@Column(name="create_at")
